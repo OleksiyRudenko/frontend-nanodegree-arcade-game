@@ -10,4 +10,9 @@ var gameSetting = {
         bugRows: {from: 1, to: 3},
         playerStartRow: 4,
     },
+    character: {
+        enemy: {
+            speed: {from:20, to:120},
+        },
+    },
 };

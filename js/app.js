@@ -8,7 +8,7 @@ var Character = function(sprite) {
     // target character location
     this.target = {x: 100, y: 0, row: 0};
     // speed character moves from current location to target
-    this.speed = 1;
+    this.speed = gameSetting.character.enemy.speed.from;
 };
 
 // Draw the character on the screen, default behaviour; required method for game
@@ -22,6 +22,7 @@ Character.prototype.update = function(dt) {
   // You should multiply any movement by the dt parameter
   // which will ensure the game runs at the same speed for
   // all computers.
+    this.location.x += this.speed * dt;
 };
 
 // Set character's location x,y
@@ -88,6 +89,7 @@ for (var i = 0; i < 3; i++) {
             Math.random()*(gameSetting.scene.bugRows.to-gameSetting.scene.bugRows.from+1)+gameSetting.scene.bugRows.from
         )
     );
+    allEnemies[i].speed = randomInt(gameSetting.character.enemy.speed);
 }
 
 var player = new Player();
