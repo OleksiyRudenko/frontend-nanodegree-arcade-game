@@ -22,7 +22,10 @@ var Engine = (function(global) {
         win = global.window,
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
-        lastTime;
+        lastTime,
+        frameCount = 0;
+
+    ctx.font = '24px sans';
 
     canvas.width = 505;
     canvas.height = 606;
@@ -51,6 +54,8 @@ var Engine = (function(global) {
          * for the next time this function is called.
          */
         lastTime = now;
+
+        if (gameSetting.debug) ctx.fillText(frameCount++, 10, 50);
 
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
