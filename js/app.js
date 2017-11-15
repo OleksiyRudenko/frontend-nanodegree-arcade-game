@@ -91,7 +91,7 @@ for (var i = 0; i < 3; i++) {
 }
 
 var player = new Player();
-player.setLocationRow(gameSetting.playerStartRow);
+player.setLocationRow(gameSetting.scene.playerStartRow);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
