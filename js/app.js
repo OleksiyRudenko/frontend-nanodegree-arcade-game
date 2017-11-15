@@ -24,13 +24,19 @@ Character.prototype.update = function(dt) {
   // all computers.
 };
 
-// Set character's location
+// Set character's location x,y
 Character.prototype.setLocation = function(x,y) {
     this.location = {
         x: x,
         y: y,
-        row: y * sceneSetting.block.height,
+        row: Math.floor(y / sceneSetting.block.height),
     };
+};
+
+// Set character's location row
+Character.prototype.setLocation = function(row) {
+    this.location.row = row;
+    this.location.y = row * sceneSetting.block.height;
 };
 
 // Set character's target location
