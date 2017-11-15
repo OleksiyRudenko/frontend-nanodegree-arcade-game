@@ -74,7 +74,11 @@ Player.prototype.handleInput = function(direction) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
+var allEnemies = [];
+for (var i = 0; i < 3; i++) {
+    allEnemies.push(new Enemy());
+    allEnemies[i].setLocationRow(Math.floor(Math.random()*(sceneSetting.bugRows.to-sceneSetting.bugRows.from+1)+sceneSetting.bugRows.from));
+}
 
 
 // This listens for key presses and sends the keys to your
