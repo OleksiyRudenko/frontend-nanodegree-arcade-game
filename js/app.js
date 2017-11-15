@@ -29,14 +29,14 @@ Character.prototype.setLocation = function(x,y) {
     this.location = {
         x: x,
         y: y,
-        row: Math.floor(y / sceneSetting.block.height),
+        row: Math.floor(y / gameSetting.scene.block.height),
     };
 };
 
 // Set character's location row
 Character.prototype.setLocation = function(row) {
     this.location.row = row;
-    this.location.y = row * sceneSetting.block.height;
+    this.location.y = row * gameSetting.scene.block.height;
 };
 
 // Set character's target location
@@ -83,11 +83,15 @@ Player.prototype.handleInput = function(direction) {
 var allEnemies = [];
 for (var i = 0; i < 3; i++) {
     allEnemies.push(new Enemy());
-    allEnemies[i].setLocationRow(Math.floor(Math.random()*(sceneSetting.bugRows.to-sceneSetting.bugRows.from+1)+sceneSetting.bugRows.from));
+    allEnemies[i].setLocationRow(
+        Math.floor(
+            Math.random()*(gameSetting.scene.bugRows.to-gameSetting.scene.bugRows.from+1)+gameSetting.scene.bugRows.from
+        )
+    );
 }
 
 var player = new Player();
-player.setLocationRow(sceneSetting.playerStartRow);
+player.setLocationRow(gameSetting.playerStartRow);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

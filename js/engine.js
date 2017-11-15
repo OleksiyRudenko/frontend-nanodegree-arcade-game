@@ -13,16 +13,6 @@
  * writing app.js a little simpler to work with.
  */
 
-// scene properties
-var sceneSetting = {
-  dimension: {width: 505, height: 606},
-  block: {width: 101, height: 83},
-  numRows: 6,
-  numCols: 5,
-  bugRows: {from: 1, to: 3},
-  playerStartRow: 4,
-};
-
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
