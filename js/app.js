@@ -86,6 +86,8 @@ for (var i = 0; i < 3; i++) {
     allEnemies[i].setLocationRow(Math.floor(Math.random()*(sceneSetting.bugRows.to-sceneSetting.bugRows.from+1)+sceneSetting.bugRows.from));
 }
 
+var player = new Player();
+player.setLocationRow(sceneSetting.playerStartRow);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
