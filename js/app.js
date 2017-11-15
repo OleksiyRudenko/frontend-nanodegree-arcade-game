@@ -1,3 +1,23 @@
+// Character is a superclass for Enemy and Player
+var Character = function(sprite) {
+    // The image/sprite for our enemies, this uses
+    // a helper we've provided to easily load images
+    this.sprite = sprite;
+};
+
+// Draw the character on the screen, default behaviour; required method for game
+Character.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+// Update the character's position, default behaviour; required method for game
+// Parameter: dt, a time delta between ticks
+Character.prototype.update = function(dt) {
+  // You should multiply any movement by the dt parameter
+  // which will ensure the game runs at the same speed for
+  // all computers.
+};
+
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
