@@ -34,7 +34,7 @@ Character.prototype.setLocation = function(x,y) {
 };
 
 // Set character's location row
-Character.prototype.setLocation = function(row) {
+Character.prototype.setLocationRow = function(row) {
     this.location.row = row;
     this.location.y = row * gameSetting.scene.block.height;
 };
