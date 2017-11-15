@@ -4,9 +4,9 @@ var Character = function(sprite) {
     // a helper we've provided to easily load images
     this.sprite = sprite;
     // current character location
-    this.location = {x: 0, y: 0};
+    this.location = {x: 0, y: 0, row: 1};
     // target character location
-    this.target = {x: 100, y: 0};
+    this.target = {x: 100, y: 0, row: 0};
     // speed character moves from current location to target
     this.speed = 1;
 };
@@ -26,7 +26,11 @@ Character.prototype.update = function(dt) {
 
 // Set character's location
 Character.prototype.setLocation = function(x,y) {
-    this.location = {x: x, y: y};
+    this.location = {
+        x: x,
+        y: y,
+        row: y * sceneSetting.block.height,
+    };
 };
 
 // Set character's target location
