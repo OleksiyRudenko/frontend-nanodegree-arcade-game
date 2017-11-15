@@ -84,11 +84,7 @@ Player.prototype.handleInput = function(direction) {
 var allEnemies = [];
 for (var i = 0; i < 3; i++) {
     allEnemies.push(new Enemy());
-    allEnemies[i].setLocationRow(
-        Math.floor(
-            Math.random()*(gameSetting.scene.bugRows.to-gameSetting.scene.bugRows.from+1)+gameSetting.scene.bugRows.from
-        )
-    );
+    allEnemies[i].setLocationRow(randomInt(gameSetting.scene.bugRows));
     allEnemies[i].speed = randomInt(gameSetting.character.enemy.speed);
 }
 
