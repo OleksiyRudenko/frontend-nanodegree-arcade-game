@@ -3,6 +3,12 @@ var Character = function(sprite) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = sprite;
+    // current character location
+    this.location = {x: 0, y: 0};
+    // target character location
+    this.target = {x: 100, y: 0};
+    // speed character moves from current location to target
+    this.speed = 1;
 };
 
 // Draw the character on the screen, default behaviour; required method for game
@@ -17,6 +23,23 @@ Character.prototype.update = function(dt) {
   // which will ensure the game runs at the same speed for
   // all computers.
 };
+
+// Set character's location
+Character.prototype.setLocation = function(x,y) {
+    this.location = {x: x, y: y};
+};
+
+// Set character's target location
+Character.prototype.setTarget = function(x,y) {
+  this.target = {x: x, y: y};
+};
+
+// Set character's target location
+Character.prototype.setSpeed = function(speed) {
+  this.speed = speed;
+};
+
+
 
 // Enemies our player must avoid
 var Enemy = function() {
