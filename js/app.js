@@ -13,7 +13,7 @@ var Character = function(sprite) {
 
 // Draw the character on the screen, default behaviour; required method for game
 Character.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.location.x, this.location.y);
 };
 
 // Update the character's position, default behaviour; required method for game
