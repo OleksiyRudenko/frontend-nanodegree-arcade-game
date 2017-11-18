@@ -11,6 +11,7 @@ var player = new Player();
 player.setLocationColRow(Math.floor(gameSetting.scene.numCols / 2), gameSetting.scene.playerStartRow);
 var playerSpeed = 0; // Math.floor(gameSetting.character.enemy.speed.to * 1.5);
 player.setSpeed(playerSpeed, playerSpeed);
+player.setTargetRow(0);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
