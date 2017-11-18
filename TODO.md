@@ -2,7 +2,7 @@
 
  * [x] Research the project, make a dev plan `[0:45]`
  * [x] `js/engine.js/Engine` : add properties (playground and block dimensions)
- * [x] `js/app.js/` : build basic functionality `[2:30]`
+ * [x] `js/app.js/` : build basic functionality `[8:20]`
  * [x] `js/app.js/Character` : improve `Character` super class
  * [x] `js/app.js/Player` : improve `Player` class
  * [x] `js/app.js/Enemy` : improve `Enemy` class
