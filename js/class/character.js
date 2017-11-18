@@ -26,10 +26,16 @@ Character.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+
+    if (this.isAtTargetColRow()) this.onAtTargetColRow();
+    if (this.isAtTargetCol()) this.onAtTargetCol();
+    if (this.isAtTargetRow()) this.onAtTargetRow();
     if (this.isAtTarget()) {
         this.onAtTarget();
         return;
     }
+
+    // update location
     this.setLocation(this.location.x + this.speed.dx * dt, this.location.y + this.speed.dy * dt);
 };
 
@@ -42,8 +48,35 @@ Character.prototype.isAtTarget = function() {
     return xTarget && yTarget;
 };
 
+// Check if character is at target column
+Character.prototype.isAtTargetCol = function() {
+    return this.location.col == this.target.col;
+};
+
+// Check if character is at target row
+Character.prototype.isAtTargetRow = function() {
+    return this.location.row == this.target.row;
+};
+
+// Check if character is at target column and row
+Character.prototype.isAtTargetColRow = function() {
+    return this.location.isAtTargetCol() && this.isAtTargetRow();
+};
+
 // this method is invoked upon character arrival at target
 Character.prototype.onAtTarget = function() {
+};
+
+// this method is invoked upon character arrival at target column
+Character.prototype.onAtTargetCol = function() {
+};
+
+// this method is invoked upon character arrival at target column
+Character.prototype.onAtTargetRow = function() {
+};
+
+// this method is invoked upon character arrival at target column
+Character.prototype.onAtTargetColRow = function() {
 };
 
 // Set character's location x,y
