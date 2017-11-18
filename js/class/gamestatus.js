@@ -22,6 +22,29 @@ GameStatus.prototype.render = function() {
     ctx.font = 'bold 24px arial';
     ctx.textAlign = 'right';
     ctx.fillText(this.lives, 150, 40, 50);
+
+    // game over
+    if (!this.lives) {
+        // panel
+        var w = Math.floor(gameSetting.scene.dimension.width * 0.8),
+            h = Math.floor(gameSetting.scene.dimension.height * 0.5),
+            x = Math.floor((gameSetting.scene.dimension.width - w) / 2),
+            y = Math.floor((gameSetting.scene.dimension.height - h) * 0.3);
+        ctx.beginPath();
+        ctx.fillStyle = '#cc0000';
+        ctx.rect(x,y,w,h);
+        ctx.globalAlpha = 0.85;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        // Game Over
+        ctx.fillStyle = '#aaaaaa';
+        ctx.font = 'bold 36px arial';
+        ctx.textAlign = 'center';
+        ctx.fillText("Game Over", x + w / 2, y + 90, w);
+        ctx.font = '24px arial';
+        ctx.textAlign = 'center';
+        ctx.fillText("Reload page to restart", x + w/2, y + 150, w);
+    }
 };
 
 // Called when Player reaches river
