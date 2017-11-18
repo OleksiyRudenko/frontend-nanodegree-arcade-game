@@ -14,6 +14,5 @@ var gameSetting = {
         enemy: {
             speed: {from:30, to:400},
         },
-        collisionDistance:
     },
 };
