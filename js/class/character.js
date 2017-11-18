@@ -71,6 +71,14 @@ Character.prototype.isAtTargetColRow = function() {
     return this.location.isAtTargetCol() && this.isAtTargetRow();
 };
 
+// Return viewBox center coordinates
+Character.prototype.getCenter = function() {
+    return {
+        x: this.location.x + this.viewBox.xOffset,
+        y: this.location.y + this.viewBox.yOffset,
+    };
+};
+
 // this method is invoked upon character arrival at target
 Character.prototype.onAtTarget = function() {
 };
