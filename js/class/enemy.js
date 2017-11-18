@@ -6,3 +6,15 @@ var Enemy = function() {
 Enemy.prototype = Object.create(Character.prototype); // inherit methods from superclass
 Enemy.prototype.constructor = Enemy; // restore self-reference
 // add more specific methods
+
+// This method is called when Character.isAtTarget()
+Enemy.prototype.onAtTarget = function () {
+    this.relaunch();
+};
+
+// relaunches enemy with randomized settings
+Enemy.prototype.relaunch = function () {
+    this.setLocationColRow(-1, randomInt(gameSetting.scene.bugRows));
+    this.setTargetColRow(5, this.location.row);
+    this.setSpeed(randomInt(gameSetting.character.enemy.speed), 0);
+};

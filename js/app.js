@@ -2,11 +2,9 @@
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [];
-for (var i = 0; i < 3; i++) {
+for (var i = 0; i < 4; i++) {
     allEnemies.push(new Enemy());
-    allEnemies[i].setLocationColRow(0, randomInt(gameSetting.scene.bugRows));
-    allEnemies[i].setTargetColRow(4, allEnemies[i].location.row);
-    allEnemies[i].setSpeed(randomInt(gameSetting.character.enemy.speed), 0);
+    allEnemies[i].relaunch();
 }
 
 var player = new Player();
