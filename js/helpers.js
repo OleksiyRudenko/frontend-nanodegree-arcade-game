@@ -10,3 +10,23 @@ function randomInt(from, to) {
     }
     return Math.floor(Math.random() * (to - from + 1)) + from;
 }
+
+// convert y into row#
+function y2row(y) {
+    return Math.floor(y / gameSetting.scene.block.height);
+}
+
+// convert x into column#
+function x2col(x) {
+    return Math.floor(x / gameSetting.scene.block.width);
+}
+
+// convert y into row#
+function row2y(row) {
+    return row * gameSetting.scene.block.height;
+}
+
+// convert x into column#
+function col2x(col) {
+    return col * gameSetting.scene.block.width;
+}
