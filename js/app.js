@@ -13,6 +13,9 @@ var playerSpeed = 0; // Math.floor(gameSetting.character.enemy.speed.to * 1.5);
 player.setSpeed(playerSpeed, playerSpeed);
 player.setTargetRow(0);
 
+// initialize game status
+var gameStatus = new GameStatus(player,3);
+
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
