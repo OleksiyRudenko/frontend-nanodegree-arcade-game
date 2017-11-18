@@ -23,10 +23,22 @@ Character.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.location.x, this.location.y + gameSetting.scene.characterRowDelta);
     if (gameSetting.debug) {
         ctx.font = '12px sans';
+        ctx.fillStyle = '#000000';
         ctx.fillText(
-            '(' + Math.floor(this.location.x) + ';' + this.location.y + ') => (' +
-            '(' + this.target.x + ';' + this.target.y + ') == ' + this.isAtTarget(),
+            '(' + Math.floor(this.location.x) + ';' + this.location.y + ') => ('
+            + '(' + this.target.x + ';' + this.target.y + ') == ' + this.isAtTarget()
+            + ' ' + JSON.stringify(this.viewBox),
             this.location.x - 50, this.location.y);
+        // draw a view binding box
+        ctx.beginPath();
+        ctx.strokeStyle = '#333333';
+        ctx.rect(
+            this.location.x + this.viewBox.xOffset - this.viewBox.width / 2,
+            this.location.y + this.viewBox.yOffset + gameSetting.scene.characterRowDelta - this.viewBox.height / 2,
+            this.viewBox.width,
+            this.viewBox.height
+            );
+        ctx.stroke();
     }
 };
 

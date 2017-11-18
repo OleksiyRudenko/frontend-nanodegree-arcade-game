@@ -25,7 +25,7 @@ GameStatus.prototype.render = function() {
 
 // Called when Player reaches river
 GameStatus.prototype.win = function() {
-
+    this.lives++;
 };
 
 // Called on collisions

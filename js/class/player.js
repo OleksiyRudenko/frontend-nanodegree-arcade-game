@@ -12,6 +12,13 @@ var Player = function() {
 Player.prototype = Object.create(Character.prototype); // inherit methods from superclass
 Player.prototype.constructor = Player; // restore self-reference
 
+// ============= Override methods ====================
+// When reaching target row (river)
+Player.prototype.onAtTargetRow = function() {
+    gameStatus.win();
+    this.relaunch();
+};
+
 // add more specific methods
 // Handle input
 Player.prototype.handleInput = function(direction) {
