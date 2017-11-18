@@ -4,12 +4,13 @@
 var allEnemies = [];
 for (var i = 0; i < 3; i++) {
     allEnemies.push(new Enemy());
-    allEnemies[i].setLocationRow(randomInt(gameSetting.scene.bugRows));
-    allEnemies[i].speed = randomInt(gameSetting.character.enemy.speed);
+    allEnemies[i].setLocationColRow(0, randomInt(gameSetting.scene.bugRows));
+    allEnemies[i].setTargetColRow(4, allEnemies[i].location.row);
+    allEnemies[i].setSpeed(randomInt(gameSetting.character.enemy.speed), 0);
 }
 
 var player = new Player();
-player.setLocationRow(gameSetting.scene.playerStartRow);
+player.setLocationColRow(0, gameSetting.scene.playerStartRow);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
