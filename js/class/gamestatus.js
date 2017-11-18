@@ -6,17 +6,17 @@ var GameStatus = function(player, lives) {
 };
 
 // Renders status bar and event messages
-Character.prototype.render = function() {
+GameStatus.prototype.render = function() {
 
 };
 
 // Called when Player reaches river
-Character.prototype.win = function() {
+GameStatus.prototype.win = function() {
 
 };
 
 // Called on collisions
-Character.prototype.lose = function() {
+GameStatus.prototype.lose = function() {
     this.player.relaunch();
 };
 

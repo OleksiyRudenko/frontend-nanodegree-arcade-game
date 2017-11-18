@@ -40,9 +40,8 @@ Enemy.prototype.checkCollisionWithPlayer = function() {
 
     var distX = Math.abs(center.x - playerCenter.x);
     var distY = Math.abs(center.y - playerCenter.y);
-    if (dixtX < this.viewBox.width / 2 + player.viewBox.width / 2
+    if (distX < this.viewBox.width / 2 + player.viewBox.width / 2
         && distY < this.viewBox.height / 2 + player.viewBox.height / 2) {
         gameStatus.lose();
     }
-
 };
