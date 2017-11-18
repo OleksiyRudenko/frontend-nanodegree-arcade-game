@@ -21,10 +21,13 @@ var Character = function(sprite) {
 // Draw the character on the screen, default behaviour; required method for game
 Character.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.location.x, this.location.y + gameSetting.scene.characterRowDelta);
-    if (gameSetting.debug) ctx.fillText(
-        '(' + Math.floor(this.location.x) + ';' + this.location.y + ') => (' +
-        '(' + this.target.x + ';' + this.target.y + ') == ' + this.isAtTarget(),
-        this.location.x - 50, this.location.y);
+    if (gameSetting.debug) {
+        ctx.font = '12px sans';
+        ctx.fillText(
+            '(' + Math.floor(this.location.x) + ';' + this.location.y + ') => (' +
+            '(' + this.target.x + ';' + this.target.y + ') == ' + this.isAtTarget(),
+            this.location.x - 50, this.location.y);
+    }
 };
 
 // Update the character's position, default behaviour; required method for game
