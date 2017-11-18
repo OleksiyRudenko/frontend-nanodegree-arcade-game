@@ -1,6 +1,6 @@
 // game settings
 var gameSetting = {
-    debug: true,
+    debug: false,
     scene: {
         dimension: {width: 505, height: 606},
         block: {width: 101, height: 83},
