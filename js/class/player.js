@@ -1,6 +1,12 @@
 // Player is our controllable hero
 var Player = function() {
     Character.call(this,'images/char-boy.png');
+    this.viewBox = {
+        xOffset : 50,
+        yOffset : 100,
+        width   : 70,
+        height  : 80,
+    };
 };
 
 Player.prototype = Object.create(Character.prototype); // inherit methods from superclass

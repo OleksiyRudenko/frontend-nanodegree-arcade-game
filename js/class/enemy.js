@@ -1,6 +1,12 @@
 // Enemies our player must avoid
 var Enemy = function() {
     Character.call(this,'images/enemy-bug.png');
+    this.viewBox = {
+        xOffset : 50,
+        yOffset : 115,
+        width   : 101,
+        height  : 70,
+    };
 };
 
 Enemy.prototype = Object.create(Character.prototype); // inherit methods from superclass

@@ -9,6 +9,13 @@ var Character = function(sprite) {
     this.target = {x: 0, y: 0, col: 0, row: 0};
     // speed character moves from current location to target
     this.speed = {dx: gameSetting.character.enemy.speed.from, dy: 0};
+    // viewBox
+    this.viewBox = {
+        xOffset : 50,
+        yOffset : 100,
+        width   : 35,
+        height  : 40,
+    };
 };
 
 // Draw the character on the screen, default behaviour; required method for game
