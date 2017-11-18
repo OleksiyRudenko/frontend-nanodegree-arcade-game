@@ -68,7 +68,7 @@ Character.prototype.isAtTargetRow = function() {
 
 // Check if character is at target column and row
 Character.prototype.isAtTargetColRow = function() {
-    return this.location.isAtTargetCol() && this.isAtTargetRow();
+    return this.isAtTargetCol() && this.isAtTargetRow();
 };
 
 // Return viewBox center coordinates
