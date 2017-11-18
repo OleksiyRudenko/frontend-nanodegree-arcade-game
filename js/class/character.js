@@ -37,6 +37,7 @@ Character.prototype.update = function(dt) {
 
     // update location
     this.setLocation(this.location.x + this.speed.dx * dt, this.location.y + this.speed.dy * dt);
+    this.onUpdate();
 };
 
 // Check if character is at target coordinates (or just passed those)
@@ -77,6 +78,11 @@ Character.prototype.onAtTargetRow = function() {
 
 // this method is invoked upon character arrival at target column
 Character.prototype.onAtTargetColRow = function() {
+};
+
+// this method is invoked upon every update
+// should be overridden by deriving classes
+Character.prototype.onUpdate = function() {
 };
 
 // Set character's location x,y

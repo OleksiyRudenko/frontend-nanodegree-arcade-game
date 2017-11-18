@@ -7,15 +7,28 @@ Enemy.prototype = Object.create(Character.prototype); // inherit methods from su
 Enemy.prototype.constructor = Enemy; // restore self-reference
 // add more specific methods
 
+// ============= Override methods =======================
 // This method is called when Character.isAtTarget()
 Enemy.prototype.onAtTarget = function () {
     this.relaunch(0);
 };
 
-// relaunches enemy with randomized settings
+Enemy.prototype.onUpdate = function() {
+  this.checkCollisionWithPlayer();
+};
+
+
+// ============= Custom methods ========================
+// Relaunches enemy with randomized settings
 Enemy.prototype.relaunch = function (row) {
     row = (row < gameSetting.scene.bugRows.from || row > gameSetting.scene.bugRows.to) ? 0 : row;
     this.setLocationColRow(-1, row || randomInt(gameSetting.scene.bugRows));
     this.setTargetColRow(5, this.location.row);
     this.setSpeed(randomInt(gameSetting.character.enemy.speed), 0);
+};
+
+// Check for collisions with player
+Enemy.prototype.checkCollisionWithPlayer = function() {
+
+
 };
