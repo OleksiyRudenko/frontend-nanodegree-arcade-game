@@ -17,7 +17,7 @@ Character.prototype.win = function() {
 
 // Called on collisions
 Character.prototype.lose = function() {
-
+    this.player.relaunch();
 };
 
 

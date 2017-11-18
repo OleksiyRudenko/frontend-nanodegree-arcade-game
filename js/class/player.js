@@ -7,6 +7,7 @@ Player.prototype = Object.create(Character.prototype); // inherit methods from s
 Player.prototype.constructor = Player; // restore self-reference
 
 // add more specific methods
+// Handle input
 Player.prototype.handleInput = function(direction) {
     // if (!this.isAtTarget()) return;
     var dcol = 0;
@@ -21,4 +22,11 @@ Player.prototype.handleInput = function(direction) {
         this.setLocationCol(this.location.col + dcol);
     if (!(this.location.row + drow < 0 || this.location.row + drow >= gameSetting.scene.numRows))
         this.setLocationRow(this.location.row + drow);
+};
+
+Player.prototype.relaunch = function() {
+    this.setLocationColRow(Math.floor(gameSetting.scene.numCols / 2), gameSetting.scene.playerStartRow);
+    var playerSpeed = 0; // Math.floor(gameSetting.character.enemy.speed.to * 1.5);
+    this.setSpeed(playerSpeed, playerSpeed);
+    this.setTargetRow(0);
 };

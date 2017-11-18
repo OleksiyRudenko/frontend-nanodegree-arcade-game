@@ -8,10 +8,7 @@ for (var i = 0; i < 5; i++) {
 }
 
 var player = new Player();
-player.setLocationColRow(Math.floor(gameSetting.scene.numCols / 2), gameSetting.scene.playerStartRow);
-var playerSpeed = 0; // Math.floor(gameSetting.character.enemy.speed.to * 1.5);
-player.setSpeed(playerSpeed, playerSpeed);
-player.setTargetRow(0);
+player.relaunch();
 
 // initialize game status
 var gameStatus = new GameStatus(player,3);
