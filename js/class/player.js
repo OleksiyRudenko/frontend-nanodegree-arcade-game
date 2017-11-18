@@ -23,6 +23,7 @@ Player.prototype.onAtTargetRow = function() {
 // Handle input
 Player.prototype.handleInput = function(direction) {
     // if (!this.isAtTarget()) return;
+    if (!gameStatus.allowPlayer) return;
     var dcol = 0;
     var drow = 0;
     switch (direction) {

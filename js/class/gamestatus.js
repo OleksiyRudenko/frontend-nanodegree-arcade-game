@@ -3,6 +3,7 @@
 var GameStatus = function(player, lives) {
     this.player = player;
     this.lives = lives;
+    this.allowPlayer = true; // do we read keyboard?
 };
 
 // Renders status bar and event messages
@@ -30,6 +31,7 @@ GameStatus.prototype.win = function() {
 
 // Called on collisions
 GameStatus.prototype.lose = function() {
+    if (--this.lives == 0) this.allowPlayer = false;
     this.player.relaunch();
 };
 
