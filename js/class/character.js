@@ -27,11 +27,9 @@ Character.prototype.update = function(dt) {
 
 // Set character's location x,y
 Character.prototype.setLocation = function(x,y) {
-    this.location = {
-        x: x,
-        y: y,
-        row: Math.floor(y / gameSetting.scene.block.height),
-    };
+    this.location.x = x;
+    this.location.y = y;
+    this.location.row = Math.floor(y / gameSetting.scene.block.height);
 };
 
 // Set character's location row
@@ -42,8 +40,15 @@ Character.prototype.setLocationRow = function(row) {
 
 // Set character's target location
 Character.prototype.setTarget = function(x,y) {
-    this.target = {x: x, y: y};
+    this.target.x = x;
+    this.target.y = y;
 };
+
+// Set character's target row
+Character.prototype.setTargetRow = function(row) {
+    this.target.y = y2row(row);
+};
+
 
 // Set character's target location
 Character.prototype.setSpeed = function(speed) {
