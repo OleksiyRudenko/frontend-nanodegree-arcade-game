@@ -9,12 +9,13 @@ Enemy.prototype.constructor = Enemy; // restore self-reference
 
 // This method is called when Character.isAtTarget()
 Enemy.prototype.onAtTarget = function () {
-    this.relaunch();
+    this.relaunch(0);
 };
 
 // relaunches enemy with randomized settings
-Enemy.prototype.relaunch = function () {
-    this.setLocationColRow(-1, randomInt(gameSetting.scene.bugRows));
+Enemy.prototype.relaunch = function (row) {
+    row = (row < gameSetting.scene.bugRows.from || row > gameSetting.scene.bugRows.to) ? 0 : row;
+    this.setLocationColRow(-1, row || randomInt(gameSetting.scene.bugRows));
     this.setTargetColRow(5, this.location.row);
     this.setSpeed(randomInt(gameSetting.character.enemy.speed), 0);
 };

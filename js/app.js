@@ -2,9 +2,9 @@
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var allEnemies = [];
-for (var i = 0; i < 4; i++) {
+for (var i = 0; i < 5; i++) {
     allEnemies.push(new Enemy());
-    allEnemies[i].relaunch();
+    allEnemies[i].relaunch(i);
 }
 
 var player = new Player();

@@ -12,7 +12,7 @@ var gameSetting = {
     },
     character: {
         enemy: {
-            speed: {from:20, to:400},
+            speed: {from:30, to:400},
         },
     },
 };
