@@ -3,9 +3,9 @@ var Enemy = function() {
     Character.call(this,'images/enemy-bug.png');
     this.viewBox = {
         xOffset : 50,
-        yOffset : 115,
-        width   : 101,
-        height  : 70,
+        yOffset : 110,
+        width   : 80,
+        height  : 50,
     };
 };
 

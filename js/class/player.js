@@ -4,8 +4,8 @@ var Player = function() {
     this.viewBox = {
         xOffset : 50,
         yOffset : 100,
-        width   : 70,
-        height  : 80,
+        width   : 60,
+        height  : 60,
     };
 };
 
