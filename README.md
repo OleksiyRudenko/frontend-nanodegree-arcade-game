@@ -16,6 +16,8 @@ When lives count reaches zero game ends.
 
 Reload the page to restart.
 
+![demo](images/frogger-rs.gif)
+
 ## Original Task
 
 Students should use this
